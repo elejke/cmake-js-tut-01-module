@@ -5,6 +5,15 @@ project (addon)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
+set(CONAN_DISABLE_CHECK_COMPILER TRUE)
+
+add_compile_definitions(NAPI_CPP_EXCEPTIONS)
+
+include(${CMAKE_SOURCE_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
+include(${CMAKE_SOURCE_DIR}/util.cmake)
+
 # Essential include files to build a node addon,
 # you should add this line in every CMake.js based project.
 include_directories(${CMAKE_JS_INC})
@@ -23,3 +32,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 # Essential library files to link to a node addon,
 # you should add this line in every CMake.js based project.
 target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${CONAN_LIBS})
+
