@@ -1,5 +1,7 @@
 ```
 npm install (даже если с ошибкой)
+npm install nan --save
+npm install cmake-js --save
 conan install .
 cmake-js compile
 mv build/lib build/Release
