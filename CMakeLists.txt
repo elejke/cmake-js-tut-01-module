@@ -1,13 +1,11 @@
+# Name of the project (will be the name of the plugin)
+project (addon CXX)
 cmake_minimum_required(VERSION 3.15)
 
-# Name of the project (will be the name of the plugin)
-project (addon)
-
+set(CONAN_DISABLE_CHECK_COMPILER TRUE)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-set(CONAN_DISABLE_CHECK_COMPILER TRUE)
 
 add_compile_definitions(NAPI_CPP_EXCEPTIONS)
 
@@ -33,6 +31,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
 # Essential library files to link to a node addon,
 # you should add this line in every CMake.js based project.
+message(${CONAN_LIBS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_JS_LIB})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${CONAN_LIBS})
-
