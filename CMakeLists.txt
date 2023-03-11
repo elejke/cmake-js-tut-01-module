@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 2.8)
 # Name of the project (will be the name of the plugin)
 project (addon)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+
 # Essential include files to build a node addon,
 # you should add this line in every CMake.js based project.
 include_directories(${CMAKE_JS_INC})
