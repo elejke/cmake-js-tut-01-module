@@ -10,8 +10,6 @@
 #include "sync.h"   // NOLINT(build/include)
 #include "async.h"  // NOLINT(build/include)
 
-#include <zlib.h>
-
 using v8::FunctionTemplate;
 using v8::Handle;
 using v8::Object;
