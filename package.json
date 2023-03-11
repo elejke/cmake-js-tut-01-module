@@ -12,6 +12,6 @@
     "install": "cmake-js compile"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "^10.2.0"
   }
 }
